@@ -12,6 +12,7 @@ https://www.football-data.co.uk/spainm.php
 ```
 setwd("~/BeduDataScience/Sesion_01_Postwork")
 SP1 <- read.csv("SP1.csv")
+View(SP1)
 ```
 [-> Ver descripción de datos](https://github.com/adavals/bedu-datascience-f2/blob/main/s1/postwork/notes.txt)
 
