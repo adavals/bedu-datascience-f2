@@ -1,0 +1,33 @@
+A continuación aparecen una serie de objetivos que deberás cumplir, es un ejemplo real de aplicación y tiene que ver con datos referentes a equipos de la liga española
+de fútbol (recuerda que los datos provienen siempre de diversas naturalezas), en este caso se cuenta con muchos datos que se pueden aprovechar, explotarlos y generar análisis interesantes que se pueden aplicar a otras áreas. Siendo así damos paso a las instrucciones:" 
+
+## 1. Del siguiente enlace, descarga los datos de soccer de la temporada 2019/2020 de la primera división de la liga española: 
+
+https://www.football-data.co.uk/spainm.php
+
+## 2. Importa los datos a R como un Dataframe. NOTA: No olvides cambiar tu dirección de trabajo a la ruta donde descargaste tu archivo
+```
+setwd("~/BeduDataScience/Sesion_01_Postwork")
+SP1 <- read.csv("SP1.csv")
+```
+
+
+## 3. Del dataframe que resulta de importar los datos a `R`, extrae las columnas que contienen los números de goles anotados por los equipos que jugaron en casa (FTHG) y los goles anotados por los equipos que jugaron como visitante (FTAG); guárdalos en vectores separados
+```
+vector.FTHG <- SP1$FTHG
+vector.FTAG <- SP1$FTAG
+```
+
+## 4. Consulta cómo funciona la función `table` en `R`. Para ello, puedes ingresar los comandos `help("table")` o `?table` para leer la documentación.
+```
+help("table")
+table(vector.FTHG,vector.FTAG, dnn=list("FTHG","FTAG"))
+```
+
+## 5. Responde a las siguientes preguntas:
+### a) ¿Cuántos goles tuvo el partido con mayor empate?
+     R. 4 goles  
+###  b) ¿En cuántos partidos ambos equipos empataron 0 a 0?
+     R. 33 partidos
+###  c) ¿En cuántos partidos el equipo local (HG) tuvo la mayor goleada sin dejar que el equipo visitante (AG) metiera un solo gol?
+     R. 1 partido   (local:6 - visitante: 0)
