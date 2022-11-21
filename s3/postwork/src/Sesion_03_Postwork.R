@@ -73,5 +73,4 @@ ggplot(df.clean, aes(x=Mediciones, y=Categoria, color=fGrupo)) +
 R. Si, en la categoría 1 los grupos se ven más parecidos entre si que en las
    categorías 2 y 3
 ¿Los grupos al interior de cada categoría podrían estar generando el sesgo?
-R. Parece que el Grupo 0, tanto al interior de la categoría 3 como de la
-   categoría 2 podrían estar generando el sesgo"
+R. Parece que el Grupo 1 podría estar generando el sesgo"
