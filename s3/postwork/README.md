@@ -34,23 +34,23 @@ attr(,"freq")
 > La media es 62.88; la mediana, 49.3, es menor que la media y la moda, 23.3 es menor que la mediana.
 
 2. Con base en tu resultado anterior, ¿qué se puede concluir respecto al sesgo de `Mediciones`?
-> Hay un sesgo a la derecha
+> Hay un sesgo a la derecha.
 
 3. Calcula e interpreta la desviación estándar y los cuartiles de la distribución de `Mediciones`
 ```
 > sd(df.clean$Mediciones)
 [1] 53.76972
 ```
-> Las mediciones tienen una dispersión promedio, respecto a la media, de 53.76972
+> Las mediciones tienen una dispersión promedio, respecto a la media, de 53.76972.
 >
 ```
   > quantile(df.clean$Mediciones, probs = c(0.25, 0.50, 0.75))
   25%   50%   75%
   23.45 49.30 82.85
 ```
->25% de las observaciones tienen una medición de 23.45 o menos
-50% de las observaciones tienen una medición de 49.30 o menos
-75% de las observaciones tienen una medición de 82.85 o menos
+>- 25% de las observaciones tienen una medición de 23.45 o menos
+> - 50% de las observaciones tienen una medición de 49.30 o menos
+> - 75% de las observaciones tienen una medición de 82.85 o menos
 
 4. Con ggplot, realiza un histograma
 separando la distribución de `Mediciones` por `Categoría`
@@ -61,7 +61,8 @@ ggplot(df.clean, aes(x = Mediciones, color = Categoria, fill = Categoria)) +
 ````
 ![mediciones_x_categoria](img/histograma_mediciones_x_categoria.png)
 - ¿Consideras que sólo una categoría está generando el sesgo?"
-> Parece que la Categoría C1 podría estar generando el sesgo
+> Parecería que la categoría C1 podría estar generando el sesgo, porque sobresalen algunas barras, pero la C2 y la C3 también presentan sesgo cada una de ellas.
+
 
 5. Con ggplot, realiza un boxplot separando la distribución de `Mediciones` por `Categoría`
 y por `Grupo` dentro de cada categoría.
@@ -74,9 +75,7 @@ ggplot(df.clean, aes(x=Mediciones, y=Categoria, color=fGrupo)) +
 ![mediciones_categorias_grupos](img/boxplot_mediciones_categorias_grupos.png)
 
 - ¿Consideras que hay diferencias entre categorías?
-> Si, en la categoría 1 los grupos se ven más parecidos entre si que en las
-   categorías 2 y 3
+> Si, en la categoría 1 los grupos se ven más parecidos entre si que en las categorías 2 y 3.
 
 - ¿Los grupos al interior de cada categoría podrían estar generando el sesgo?
-> Parece que el Grupo 0, tanto al interior de la categoría 3 como de la
-   categoría 2 podrían estar generando el sesgo
+> Parece que el Grupo 0, tanto al interior de la categoría 3 como de la categoría 2 podrían estar generando el sesgo.
