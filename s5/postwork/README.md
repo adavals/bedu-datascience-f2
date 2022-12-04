@@ -107,7 +107,7 @@ ratio of variances
 ```
 
 > Conclusión sobre las varianzas:
-</br> Considerando un nivel de confianza de 99% (0.01 de significancia) y que la prueba t arroja un valor p de 0.2637, mayor al de la significancia, no existe evidencia estadística para rechazar Ho.
+</br> Considerando un nivel de confianza de 99% (0.01 de significancia) y que la prueba F arroja un valor p de 0.2637, mayor al de la significancia, no existe evidencia estadística para rechazar Ho.
 </br> Las varianzas no son distintas
 
 ```

@@ -65,7 +65,7 @@ var.test(iris[iris$Species == "virginica", "Petal.Length"],
          ratio = 1, alternative = "two.sided", conf.level = 0.99)
 # Conclusión sobre las varianzas
 # Considerando un nivel de confianza de 99% (0.01 de significancia) y que
-# la prueba t arroja un valor p de 0.2637, mayor al de la significancia, 
+# la prueba F arroja un valor p de 0.2637, mayor al de la significancia, 
 # no existe evidencia estadística para rechazar Ho.
 # Las varianzas no son distintas
 
