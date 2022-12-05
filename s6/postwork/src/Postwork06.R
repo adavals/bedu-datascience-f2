@@ -78,7 +78,7 @@ shapiro.test(StanRes2)
 # estandarizados es cercana a 1, por lo que si se acerca a la distribución 
 # normal
 
-# Una vez validados estos supuestos, podemos realizar utilizar nuestro modelo estimado 
+# Una vez validados estos supuestos, podemos utilizar nuestro modelo estimado 
 # para realizar predicciones y obtener su intervalo de confianza
 
 # Datos de ejemplo para predicción de ventas

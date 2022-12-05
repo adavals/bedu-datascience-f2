@@ -126,7 +126,7 @@ W = 0.97535, p-value = 0.001365
 ```
 > De acuerdo con el valor de W, 0.97535, la distribución de los residuales estandarizados es cercana a 1, por lo que si se acerca a la distribución normal.
 
-> Una vez validados estos supuestos, podemos realizar utilizar nuestro modelo estimado para realizar predicciones y obtener su intervalo de confianza.
+> Una vez validados estos supuestos, podemos utilizar nuestro modelo estimado para realizar predicciones y obtener su intervalo de confianza.
 
 ```
 # Datos de ejemplo para predicción de ventas
