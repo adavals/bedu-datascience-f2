@@ -5,7 +5,7 @@ Predicciones de la temperatura global: Estimar modelos ARIMA y realizar predicci
 Utilizando el siguiente vector numérico, realiza lo que se indica.
 ```
 url = "https://raw.githubusercontent.com/beduExpert/Programacion-R-Santander-2022/main/Sesion-07/Data/global.txt"
-  Global <- scan(url, sep="") 
+Global <- scan(url, sep="") 
 ```  
 1. Crea una objeto de serie de tiempo con los datos
 de Global. La serie debe ser mensual comenzado en Enero de 1856.
