@@ -96,3 +96,4 @@ plot(x, y, type = "l", xlab = "X", ylab = "f(x)",
 > qnorm(p = 0.10, mean = value.mean, sd = value.sd, lower.tail = FALSE)
 [1] 3.73058
 ```
+### [Ver código fuente R](https://github.com/adavals/bedu-datascience-f2/blob/main/s4/postwork/src/Sesion_04_Postwork.R)

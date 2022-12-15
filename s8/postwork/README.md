@@ -103,7 +103,8 @@ dim(df.clean)
 ### V. Estima un modelo de regresión, lineal o logístico, para identificar los determinantes de la inseguridad alimentaria en México 
 
 ### VI. Escribe tu análisis en un archivo README.MD y tu código en un script de R y publica ambos en un repositorio de Github.
+### [Análisis]### [Ver código fuente R](https://github.com/adavals/bedu-datascience-f2/blob/main/s8/postwork/README.md)
 
-
+### [Ver código fuente R](https://github.com/adavals/bedu-datascience-f2/blob/main/s8/postwork/src/Sesion_08_Postwork.R)
 
 

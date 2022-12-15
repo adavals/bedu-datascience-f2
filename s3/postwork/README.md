@@ -79,3 +79,5 @@ ggplot(df.clean, aes(x=Mediciones, y=Categoria, color=fGrupo)) +
 
 - ¿Los grupos al interior de cada categoría podrían estar generando el sesgo?
 > Parece que el Grupo 1 podría estar generando el sesgo.
+
+### [Ver código fuente R](https://github.com/adavals/bedu-datascience-f2/blob/main/s3/postwork/src/Sesion_03_Postwork.R)

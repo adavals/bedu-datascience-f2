@@ -146,3 +146,5 @@ predict(m2, newdata = data, interval = "confidence", level = 0.95)
 5 46.85980 44.83446 48.88514
 ```
 > Tomando como ejemplo el caso de designar un presupuesto de TV de $500 y uno de Radio de $140 el modelo predice un valor para Sales de $46.8598, el intervalo del 95% de confianza asociado con estos presupuestos estima un mínimo de ventas de 44.83 y un máximo de 44.88.
+
+### [Ver código fuente R](https://github.com/adavals/bedu-datascience-f2/blob/main/s6/postwork/src/Sesion_06_Postwork.R)

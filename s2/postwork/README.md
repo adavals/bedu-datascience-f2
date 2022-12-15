@@ -63,3 +63,5 @@ g <- g + labs(title = "Iris database",
 g
 ```
 ![4](img/iris_geom_point_step_4.png)
+
+### [Ver código fuente R](https://github.com/adavals/bedu-datascience-f2/blob/main/s2/postwork/src/Sesion_02_Postwork.R)

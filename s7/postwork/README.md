@@ -119,3 +119,5 @@ pr <- predict(fit, 12)$pred
           Jan       Feb       Mar       Apr       May       Jun       Jul       Aug       Sep       Oct       Nov       Dec
 2005 0.4261515 0.4255704 0.4320013 0.4303828 0.4289712 0.4277401 0.4266664 0.4257300 0.4249134 0.4242012 0.4235800 0.4230383
 ```
+
+### [Ver código fuente R](https://github.com/adavals/bedu-datascience-f2/blob/main/s7/postwork/src/Sesion_07_Postwork.R)

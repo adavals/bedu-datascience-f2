@@ -42,7 +42,4 @@ table(vector.FTHG,vector.FTAG, dnn=list("FTHG","FTAG"))
 ###  c) ¿En cuántos partidos el equipo local (HG) tuvo la mayor goleada sin dejar que el equipo visitante (AG) metiera un solo gol?
      R. 1 partido   (local:6 - visitante: 0)
 
-### [Ver código fuente R][def]
-
-
-[def]: https://github.com/adavals/bedu-datascience-f2/blob/main/s1/postwork/src/Sesion_01_Postwork.R
+### [Ver código fuente R](https://github.com/adavals/bedu-datascience-f2/blob/main/s1/postwork/src/Sesion_01_Postwork.R)

@@ -170,3 +170,5 @@ Signif. codes:
 ##### CONCLUSIÓN
 > De acuerdo con las conclusiones de los 4 incisos anteriores, existe evidencia estadística para concluir que los datos recolectados por Anderson no están en 
 línea con los nuevos estudios. 
+
+### [Ver código fuente R](https://github.com/adavals/bedu-datascience-f2/blob/main/s5/postwork/src/Sesion_05_Postwork.R)
