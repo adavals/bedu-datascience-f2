@@ -1,7 +1,5 @@
 # bedu-datascience-f2
-
 ## Repositorio de prácticas Postwork: EQUIPO 17
-
 ### Curso Ciencia de Datos Bedu-Santander 
 ### Fase 2 - Módulo 1: Estadística con R 
 ---
