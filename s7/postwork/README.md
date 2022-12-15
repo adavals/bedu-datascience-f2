@@ -3,6 +3,7 @@
 Predicciones de la temperatura global: Estimar modelos ARIMA y realizar predicciones.
 #### DESARROLLO 
 Utilizando el siguiente vector numérico, realiza lo que se indica.
+[-> Ver archivo TXT de datos](https://github.com/adavals/bedu-datascience-f2/blob/main/s7/postwork/dat/global.txt)
 ```
 url = "https://raw.githubusercontent.com/beduExpert/Programacion-R-Santander-2022/main/Sesion-07/Data/global.txt"
 Global <- scan(url, sep="") 

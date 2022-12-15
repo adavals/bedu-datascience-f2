@@ -11,7 +11,7 @@ Considera:
 - X2: Radio (Presupuesto de publicidad en Radio para el producto)
 - X3: Newspaper (Presupuesto de publicidad en Periódico para el producto)
 
-- Datos: https://raw.githubusercontent.com/beduExpert/Programacion-R-Santander-2022/main/Sesion-06/data/advertising.csv
+- [-> Ver archivo CSV de datos](https://github.com/adavals/bedu-datascience-f2/blob/main/s6/postwork/dat/telecom_service.csv)
 
 ```
 adv <- read.csv("https://raw.githubusercontent.com/beduExpert/Programacion-R-Santander-2022/main/Sesion-06/data/advertising.csv")

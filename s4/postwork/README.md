@@ -9,6 +9,8 @@
 
 #### Desarrollo
 Utilizando la variable `total_intl_charge` de la base de datos telecom_service.csv de la sesión 3, realiza un análisis probabilístico. Para ello, debes determinar la función de distribución de probabilidad que más se  acerque el comportamiento de los datos. Hint: Puedes apoyarte de medidas descriptivas o técnicas de visualización.
+
+[-> Ver archivo CSV de datos](https://github.com/adavals/bedu-datascience-f2/blob/main/s4/postwork/dat/telecom_service.csv)
 ```
 df <- read.csv("https://raw.githubusercontent.com/beduExpert/Programacion-R-Santander-2022/main/Sesion-03/Data/telecom_service.csv")
 

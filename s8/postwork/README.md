@@ -22,7 +22,7 @@ La base de datos contiene las siguientes variables:
 ```
 df<-read.csv("https://raw.githubusercontent.com/beduExpert/Programacion-R-Santander-2022/main/Sesion-08/Postwork/inseguridad_alimentaria_bedu.csv")
 ```
-
+[-> Ver archivo CSV de datos](https://github.com/adavals/bedu-datascience-f2/blob/main/s8/postwork/dat/inseguridad_alimentaria_bedu.csv)
 
 ### I. Plantea el problema del caso 
 
