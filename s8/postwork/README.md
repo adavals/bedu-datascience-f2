@@ -38,6 +38,24 @@ Con base en la información que maneja el centro nutricional se detectan las sig
 
 
 ### II. Realiza un análisis descriptivo de la información 
+
+- Preparación y limpieza de datos
+```
+df<-read.csv("https://raw.githubusercontent.com/beduExpert/Programacion-R-Santander-2022/main/Sesion-08/Postwork/inseguridad_alimentaria_bedu.csv")
+dim(df)   
+# 40809 observaciones y 10 variables
+
+# Visualización de datos
+View(df)
+```
+![dataFrameView](img/dataFrame_View.png)
+```
+# Limpieza: Se eliminan observaciones incompletas
+df.clean <- df[complete.cases(df),]
+dim(df.clean)   
+# 20280 observaciones completas y 10 variables
+```
+
 - Tipos de variables
 
 | Variable | | Cualitativa | Cuantitativa |
@@ -52,6 +70,29 @@ Con base en la información que maneja el centro nutricional se detectan las sig
 | ln_als | Logaritmo natural del gasto en alimentos saludables | | Contínua 
 | ln_alns | Logaritmo natural del gasto en alimentos no saludables | | Contínua
 | IA | Inseguridad alimentaria en el hogar: 0 "No presenta IA", 1 "Presenta IA" | Nominal
+
+- Medidas de tendencia central
+1. Cualitativas
+
+| Variable | Mediana | Moda |
+| --- | --- | --- |
+| nse5f: 1 "Bajo", 2 "Medio bajo", 3 "Medio", 4 "Medio alto", 5 "Alto" | x | x
+| area: 0 "Zona urbana", 1 "Zona rural"1 | x | x
+| refin: 0 "no", 1 "sí" | x | x
+| sexojef: 0 "Hombre", 1 "Mujer" | x | x
+| IA: 0 "No presenta IA", 1 "Presenta IA" | x | x
+
+
+2. Cuantitativas
+
+| Variable | Media | Mediana | Moda |
+| --- | --- | --- | --- |
+| edadjef | x | x | x
+| numpeho | x | x | x
+| añosedu | x | x | x
+| ln_als | x | x | - 
+| ln_alns | x | x | -
+
 
 
 ### III. Calcula probabilidades que nos permitan entender el problema en México 
