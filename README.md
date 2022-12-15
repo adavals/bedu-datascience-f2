@@ -1,4 +1,23 @@
 # bedu-datascience-f2
-Prácticas de ciencia de datos en curso Bedu-Santander. Fase 2: Programación y estadística con R y Python
-## Sesión 1. Introducción a R
-### [Postwork](https://github.com/adavals/bedu-datascience-f2/tree/main/s1/postwork)
+
+## Repositorio de prácticas Postwork: EQUIPO 17
+---
+### Curso Ciencia de Datos Bedu-Santander 
+### Fase 2 - Módulo 1: Estadística con R 
+---
+### [1. Introducción a R](https://github.com/adavals/bedu-datascience-f2/tree/main/s1/postwork)
+
+### [2. Manipulación y visualización de datos en R](https://github.com/adavals/bedu-datascience-f2/tree/main/s2/postwork)
+
+### [3. Análisis exploratorio de datos](https://github.com/adavals/bedu-datascience-f2/tree/main/s3/postwork)
+
+### [4. Probabilidad y funciones de distribución](https://github.com/adavals/bedu-datascience-f2/tree/main/s4/postwork)
+
+### [5. Teorema del límite central e inferencia estadística](https://github.com/adavals/bedu-datascience-f2/tree/main/s5/postwork)
+
+### [6. Regresión lineal y clasificación](https://github.com/adavals/bedu-datascience-f2/tree/main/s6/postwork)
+
+### [7. Series de tiempo](https://github.com/adavals/bedu-datascience-f2/tree/main/s7/postwork)
+
+### [8. Caso de Análisis estadístico](https://github.com/adavals/bedu-datascience-f2/tree/main/s8/postwork)
+
