@@ -1,4 +1,4 @@
-b# Análisis estadístico sobre inseguridad alimentaria en México
+# Análisis estadístico sobre inseguridad alimentaria en México
 ## Introducción
 En este trabajo, de acuerdo con el interés de un centro de salud nutricional en México,
 se realiza un análisis estadístico sobre los patrones de gasto en el hogar de alimentos saludables y no
