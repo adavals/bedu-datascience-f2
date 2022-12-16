@@ -41,9 +41,15 @@ levantada por el Instituto Nacional de Salud Pública en México.
 
 
 ### Patrones de gasto en alimentos no saludables
-(Gráfica Boxplot)
+boxplot? o alguna
+(Gráfica Boxplot por Nivel Socioeconomico)
+(Gráfica Boxplot por Recursos financieros)
+(Gráfica boxplot por inseguridad alimentaria)
+
 ### Patrones de gasto en alimentos saludables
-(Gráfica Boxplot)
+(Gráfica Boxplot por Nivel Socioeconomico)
+(Gráfica Boxplot por Recursos financieros)
+(Gráfica boxplot por inseguridad alimentaria)
 
 ## Cálculo de probabilidades
 ### Algo
