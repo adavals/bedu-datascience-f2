@@ -332,8 +332,8 @@ ggplot(df) +
   ggtitle("Distribución de frecuencias")
 
 
-
 # 5. Asociacion con la variable dependiente
+
 
 
 # 5.1 Correlacion entre variables cuantitativas
@@ -344,23 +344,10 @@ corr_matrix
 
 # TO DO: Interpretación de la matriz
 
-# 5.2 Gráfica de dispersión
-
-# Prueba
-# ggplot(df, aes(x=ln_alns, y=ln_als)) + 
-# geom_point() +                                     
-#   stat_smooth(method = "lm",
-#               formula = y ~ x,
-#               geom = "smooth") +
-#   labs(title = "Gráfica de dispersión", 
-#        x = "Número de personas en el hogar",
-#        y = "Ln del gasto en alimento saludable") + 
-#   theme_classic()
-
 
 # III. Calcula probabilidades que nos permitan entender el problema en México 
 # De acuerdo con la muestra de un total de 20280 hogares, 14427 hogares presentan
-# inseguridad alimentaria, 71.13%
+# inseguridad alimentaria: 71.13%
 
 14427/20280  
 # [1] 0.7113905
@@ -370,18 +357,72 @@ corr_matrix
 # los hogares mexicanos considerando su nivel socioeconómico, si cuenta con recursos
 # financieros extra y si presenta inseguridad alimentaria?
 
+
 # a) comparar gasto en alimento saludable, con nse, rfin e IA, si las medidas de tendencia
 #    central son iguales entre los grupos de nse, por ejemplo, el gasto en alimento
 #    saludable no depende del nivel socioeconómico, y así para las otras dos variables y
 #    sus grupos
 
 # b) comparar gasto en alimento no saludable
+
+
+ggplot(df, aes(x=ln_alns, y=nse5f)) +
+  geom_boxplot() +
+  xlab("Gasto en alimentos no saludables") + 
+  ylab("Nivel socioeconómico") + 
+  ggtitle("Gasto en alimentos no saludables y nivel Socioeconomico")+
+  theme_classic()
+
+
+ggplot(df, aes(x=ln_alns, y=nse5f, color=IA)) +
+  geom_boxplot() +
+  xlab("Gasto en alimentos no saludables") + 
+  ylab("Nivel socioeconómico") + 
+  ggtitle("Gasto en alimentos no saludables y nivel Socioeconomico")+
+  theme_classic()
+
+ggplot(df, aes(x=ln_alns, y=refin, color=IA)) +
+  geom_boxplot() +
+  xlab("Gasto en alimentos no saludables") + 
+  ylab("Recursos financieros adicionales") + 
+  ggtitle("Gasto en alimentos no saludables y recursos adicionales")+
+  theme_classic()
+
+
+ggplot(df, aes(x=ln_als, y=nse5f)) +
+  geom_boxplot() +
+  xlab("Gasto en alimentos saludables") + 
+  ylab("Nivel socioeconómico") + 
+  ggtitle("Gasto en alimentos saludables y nivel Socioeconomico")+
+  theme_classic()
+
+
+ggplot(df, aes(x=ln_als, y=nse5f, color=IA)) +
+  geom_boxplot() +
+  xlab("Gasto en alimentos saludables") + 
+  ylab("Recursos financieros adicionales") + 
+  ggtitle("Gasto en alimentos saludables y nivel Socioeconomico")+
+  theme_classic()
+
+ggplot(df, aes(x=ln_als, y=refin, color=IA)) +
+  geom_boxplot() +
+  xlab("Gasto en alimentos saludables") + 
+  ylab("Recursos financieros adicionales") + 
+  ggtitle("Gasto en alimentos saludables y recursos adicionales")+
+  theme_classic()
+
 # 
 # 2. ¿Los hogares con menor nivel socioeconómico tienden a gastar más en productos 
 #  no saludables que los hogares con mayores niveles socioeconómicos?  
+# De acuerdo con las gráficas el nivel socioeconómico medio es en el
+# que hay una mayor cantidad de gastos en alimentos no saludables
 
 # 3. ¿El que los hogares con menor nivel socioeconómico gasten más en productos
 #  no saludables los lleva a que presente inseguridad alimentaria?
+# En las graficas se observa que, en todos los niveles socioeconómicos,
+# los hogares con inseguridad alimentaria presentan un gasto mayor
+# en alimentos no saludables
+#
 
 
 # IV. Plantea hipótesis estadísticas y concluye sobre ellas para entender el 
