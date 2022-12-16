@@ -29,6 +29,24 @@ En este trabajo se usa un extracto de los datos de la Encuesta Nacional de Salud
 levantada por el Instituto Nacional de Salud Pública en México. 
 [-> Ver archivo CSV de datos](https://github.com/adavals/bedu-datascience-f2/blob/main/s8/postwork/dat/inseguridad_alimentaria_bedu.csv)
 
+
+### Contenido de la base de datos
+Cada registro está asociado con la información de un hogar respecto a:
+
+| Variable | | Cualitativa | Cuantitativa |
+| --- | --- | --- | --- |
+| nse5f | Nivel socioeconómico del hogar: : 1 "Bajo", 2 "Medio bajo", 3 "Medio", 4 "Medio alto", 5 "Alto" | Ordinal |
+| area | Zona geográfica: 0 "Zona urbana", 1 "Zona rural" | Nominal
+| numpeho | Número de personas en el hogar | | Discreta
+| refin | Recursos financieros distintos al ingreso laboral: 0 "no", 1 "sí" | Nominal
+| edadjef | Edad del jefe/a de familia | | Discreta
+| sexojef | Sexo del jefe/a de familia): 0 "Hombre", 1 "Mujer" | Nominal
+| añosedu | Años de educación del jefe de familia | | Discreta
+| ln_als | Logaritmo natural del gasto en alimentos saludables | | Contínua 
+| ln_alns | Logaritmo natural del gasto en alimentos no saludables | | Contínua
+| IA | Inseguridad alimentaria en el hogar: 0 "No presenta IA", 1 "Presenta IA" | Nominal
+
+
 ### Estado de los datos
 Al visualizar los datos se detectó que, en total, el 50% de los registros tiene en alguno de sus campos el valor NA (No disponible), y los campos que presentan no disponiblilidad son los siguientes:
 | Campo | % de registros con NA
@@ -48,24 +66,10 @@ Los resultados de este trabajo pueden estar afectados de manera muy importante d
 
 Se está eliminando una mayor cantidad de información que estaría describiendo las condiciones en las que se presenta la inseguridad alimentaria.
 
-La base de datos contiene la siguiente información:
-
-| Variable | | Cualitativa | Cuantitativa |
-| --- | --- | --- | --- |
-| nse5f | Nivel socioeconómico del hogar: : 1 "Bajo", 2 "Medio bajo", 3 "Medio", 4 "Medio alto", 5 "Alto" | Ordinal |
-| area | Zona geográfica: 0 "Zona urbana", 1 "Zona rural" | Nominal
-| numpeho | Número de personas en el hogar | | Discreta
-| refin | Recursos financieros distintos al ingreso laboral: 0 "no", 1 "sí" | Nominal
-| edadjef | Edad del jefe/a de familia | | Discreta
-| sexojef | Sexo del jefe/a de familia): 0 "Hombre", 1 "Mujer" | Nominal
-| añosedu | Años de educación del jefe de familia | | Discreta
-| ln_als | Logaritmo natural del gasto en alimentos saludables | | Contínua 
-| ln_alns | Logaritmo natural del gasto en alimentos no saludables | | Contínua
-| IA | Inseguridad alimentaria en el hogar: 0 "No presenta IA", 1 "Presenta IA" | Nominal
 
 ### Análisis de frecuencias de variables cualitativas
 
-nse5f (nivel socioeconomico): Presenta frecuencias cercanas entre los diferentes valores, entre 18% y 22% cada uno.
+- nse5f (nivel socioeconomico): Presenta frecuencias cercanas entre los diferentes valores, entre 18% y 22% cada grupo socioeconómico.
 
 ![Frecuencias nivel socioeconomico](postwork/img/frecuencias_nse5f.png)
 
@@ -77,32 +81,13 @@ nse5f (nivel socioeconomico): Presenta frecuencias cercanas entre los diferentes
 | Medio alto |4364 |0.2151874 |0.7871302
 |       Alto |4317 |0.2128698 |1.0000000
 
-area (zona geográfica): </br>El 68% de los hogares están en área urbana.
-| Valor | Frecuencia| Frecuencia Relativa |
-| --- | --- | --- | 
-| Zona urbana| 13959 |0.6883136 
-| Zona rural | 6321 |0.3116864
+- area (zona geográfica): El 68% de los hogares están en zona urbana y el 32% en zona rural.
 
-refin (recursos financieros adicionales): </br> El 80% de los hogares tiene recursos financieros adicionales.
+- refin (recursos financieros adicionales al ingreso laboral): El 80% de los hogares si tiene, el 20% de los hogares no tiene.
   
-| Valor | Frecuencia| Frecuencia Relativa |
-| --- | --- | --- |  
-| no| 16421 |0.809714 
-| si | 3859 |0.190286
+- sexojef (sexo del jefe/a de familia): En el 78% de los hogares es hombre, en el 22% de los hogares es mujer.
 
-sexojef (sexo del jefe/a de familia):</br> En el 78% de los hogares el jefe/a de familia es hombre.
-| Valor | Frecuencia| Frecuencia Relativa |
-| --- | --- | --- |  
-| Hombre| 15887 |0.7833826
-| Mujer | 4393 |0.2166174
-
-
-IA (inseguridad alimentaria en el hogar): El 71% de los hogares presenta inseguridad alimentaria.
-| Valor | Frecuencia| Frecuencia Relativa |
-| --- | --- | --- |  
-| No presenta IA| 5853 |0.2886095
-| Presenta IA | 14427 |0.7113905
- 
+- IA (inseguridad alimentaria en el hogar): El 71% de los hogares si presenta inseguridad alimentaria, el 29% no presenta IA. 
 
 ### Medidas de tendencia central, posición y dispersión
 
