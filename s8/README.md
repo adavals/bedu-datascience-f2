@@ -1,15 +1,15 @@
-# Análisis estadístico sobre inseguridad alimentaria en México
+bbbb# Análisis estadístico sobre inseguridad alimentaria en México
 ## Introducción
 En este trabajo, de acuerdo con el interés de un centro de salud nutricional en México,
-se realiza un análisis estadístico sobre los patrones de gasto en el hogar de alimentos saludables y no
-saludables, se determina si los hogares con menor nivel socioeconomico tienden a gastar más 
+el objetivo es realizar un análisis estadístico sobre los patrones de gasto en el hogar de alimentos saludables y no
+saludables, determinar si los hogares con menor nivel socioeconomico tienden a gastar más 
 en productos no saludables que los hogares con mayores niveles socioeconómicos y que esto,
-podría llevarlos a presentar cierta inseguridad alimentaria y se trata de modelar 
-los determinantes socioeconómicos de la inseguridad alimentaria, usando un extracto de 
+podría llevarlos a presentar cierta inseguridad alimentaria y tratar de modelar 
+los determinantes socioeconómicos de la inseguridad alimentaria, todo esto, usando un extracto de 
 los datos de la Encuesta Nacional de Salud y Nutrición (2012) 
 
 ## Planteamiento del problema
-Primeramente, se realiza un análisis estadístico para conocer sobre los 
+Primeramente, se requiere un análisis estadístico para conocer sobre los 
 patrones de gasto en alimentos saludables y no saludables en los hogares mexicanos, en base a:
 - nivel socioeconómico, 
 - si el hogar cuenta o no con recursos financieros extras
@@ -30,8 +30,83 @@ levantada por el Instituto Nacional de Salud Pública en México.
 [-> Ver archivo CSV de datos](https://github.com/adavals/bedu-datascience-f2/blob/main/s8/postwork/dat/inseguridad_alimentaria_bedu.csv)
 
 ### Estado de los datos
+Al visualizar los datos se detectó que, en total, el 50% de los registros tiene en alguno de sus campos el valor NA (No disponible), y los campos que presentan no disponiblilidad son los siguientes:
+| Campo | % de registros con NA
+| --- | ---
+| ln_alns: gasto en alimentos no saludables |  42%
+| ln_als:  gasto en alimentos saludables    |  19%
+| edadjef: edad del jefe/a de familia       |  12%
+| sexojef: sexo del jefe/a de familia |  12%
 
-### Medidas de tendencia central y posición
+Se decidió eliminar del conjunto de datos todos los registros con algún campo con valor NA, debido a que se desconocen las razones por las que no están disponibles estos datos, no se cuenta con información adicional sobre inseguridad alimentaria y de conocimiento técnico suficiente para darle un tratamiento adecuado a estos datos faltantes.
+
+Los resultados de este trabajo pueden estar afectados de manera muy importante debido a esta eliminación, principalmente cuando se involucra la variable de gasto en alimentos no saludables y la inseguridad alimentaria. En estos registros eliminados, los valores de la variable inseguridad alimentaria que se presentan son:
+
+|No presenta IA|Presenta IA 
+| --- | ---
+3,938 (22.5%) | 13,566 (77.5%)
+
+Se está eliminando una mayor cantidad de información que estaría describiendo las condiciones en las que se presenta la inseguridad alimentaria.
+
+La base de datos contiene la siguiente información:
+
+| Variable | | Cualitativa | Cuantitativa |
+| --- | --- | --- | --- |
+| nse5f | Nivel socioeconómico del hogar: : 1 "Bajo", 2 "Medio bajo", 3 "Medio", 4 "Medio alto", 5 "Alto" | Ordinal |
+| area | Zona geográfica: 0 "Zona urbana", 1 "Zona rural" | Nominal
+| numpeho | Número de personas en el hogar | | Discreta
+| refin | Recursos financieros distintos al ingreso laboral: 0 "no", 1 "sí" | Nominal
+| edadjef | Edad del jefe/a de familia | | Discreta
+| sexojef | Sexo del jefe/a de familia): 0 "Hombre", 1 "Mujer" | Nominal
+| añosedu | Años de educación del jefe de familia | | Discreta
+| ln_als | Logaritmo natural del gasto en alimentos saludables | | Contínua 
+| ln_alns | Logaritmo natural del gasto en alimentos no saludables | | Contínua
+| IA | Inseguridad alimentaria en el hogar: 0 "No presenta IA", 1 "Presenta IA" | Nominal
+
+### Análisis de frecuencias de variables cualitativas
+
+nse5f (nivel socioeconomico): Presenta frecuencias cercanas entre los diferentes valores, entre 18% y 22% cada uno.
+
+![Frecuencias nivel socioeconomico](postwork/img/frecuencias_nse5f.png)
+
+| Valor | Frecuencia| Frecuencia Relativa | Frecuencia acumulada |
+| --- | --- | --- | --- | 
+|       Bajo| 3553 |0.1751972 |0.1751972
+| Medio bajo |3927 |0.1936391 |0.3688363
+|      Medio |4119 |0.2031065 |0.5719428
+| Medio alto |4364 |0.2151874 |0.7871302
+|       Alto |4317 |0.2128698 |1.0000000
+
+area (zona geográfica): </br>El 68% de los hogares están en área urbana.
+| Valor | Frecuencia| Frecuencia Relativa |
+| --- | --- | --- | 
+| Zona urbana| 13959 |0.6883136 
+| Zona rural | 6321 |0.3116864
+
+refin (recursos financieros adicionales): </br> El 80% de los hogares tiene recursos financieros adicionales.
+  
+| Valor | Frecuencia| Frecuencia Relativa |
+| --- | --- | --- |  
+| no| 16421 |0.809714 
+| si | 3859 |0.190286
+
+sexojef (sexo del jefe/a de familia):</br> En el 78% de los hogares el jefe/a de familia es hombre.
+| Valor | Frecuencia| Frecuencia Relativa |
+| --- | --- | --- |  
+| Hombre| 15887 |0.7833826
+| Mujer | 4393 |0.2166174
+
+
+IA (inseguridad alimentaria en el hogar): El 71% de los hogares presenta inseguridad alimentaria.
+| Valor | Frecuencia| Frecuencia Relativa |
+| --- | --- | --- |  
+| No presenta IA| 5853 |0.2886095
+| Presenta IA | 14427 |0.7113905
+ 
+
+### Medidas de tendencia central, posición y dispersión
+
+
 
 ### Medidas de dispersión
 
