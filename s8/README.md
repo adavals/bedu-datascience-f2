@@ -68,6 +68,7 @@ Se está eliminando una mayor cantidad de información que estaría describiendo
 
 
 ### Análisis de frecuencias de variables cualitativas
+Una vez realizada la limpieza de datos se cuenta con la siguiente información de frecuencias:
 
 - nse5f (nivel socioeconomico): Presenta frecuencias cercanas entre los diferentes valores, entre 18% y 22% cada grupo socioeconómico.
 
