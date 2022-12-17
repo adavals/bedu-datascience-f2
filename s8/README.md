@@ -136,7 +136,7 @@ En la primera gráfica se observa que el gasto en alimentos no saludales entre l
 
 ![patron_gasto_alns_vs_nse](postwork/img/patron_gasto_alns_vs_nse.png)
 
-Enseguida, involucramos la variable de inseguridad alimentaria y se observa que en el nivel socioeconómico bajo, el grupo que presenta inseguridad alimentaria presenta muchos valores extremos en gasto en alimento no saludable.
+Enseguida, se involucró la variable de inseguridad alimentaria y se observa que en el nivel socioeconómico bajo, el grupo que presenta inseguridad alimentaria presenta muchos valores extremos en gasto en alimento no saludable.
 
 ![patron_gasto_alns_vs_nse_ia](postwork/img/patron_gasto_alns_vs_nse_ia.png)
 
