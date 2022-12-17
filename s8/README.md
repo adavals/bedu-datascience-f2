@@ -166,7 +166,7 @@ Finalmente se obtuvo el mismo tipo de gráfico pero involucrando a la variable r
 
 
 ## Cálculo de probabilidades
-En este apartado se obtuvieron formas gráficas de la densidad de probabilidad para las variables de gasto en alimentos saludables y gasto en alimentos no saludables.
+En este apartado se obtuvieron formas gráficas de la densidad de probabilidad para las variables de gasto en alimentos saludables y gasto en alimentos no saludables y se calcularon algunas probabilidades respecto a estas variables.
 
 ### Densidad de probabilidad para gasto en alimentos saludables
 
@@ -178,8 +178,8 @@ En este apartado se obtuvieron formas gráficas de la densidad de probabilidad p
 ![histograma_gasto_alns](postwork/img/histograma_gasto_alns.png)
 ![funcion_gasto_alns](postwork/img/funcion_gasto_alns.png)
 
-
-También se calcularon algunas probabilidades que pueden ayudar a comprender lo que ocurre con el gasto en alimentos no saludables.
+### Probabilidades
+Se calcularon algunas probabilidades que pueden ayudar a comprender lo que ocurre con el gasto en alimentos no saludables.
 
 1. ¿Cuál es la probabilidad de que el gasto en alimento no saludable sea mayor a un 50% del promedio del gasto en alimento saludable?
 83.69%
