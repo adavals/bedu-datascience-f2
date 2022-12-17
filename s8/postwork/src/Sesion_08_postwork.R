@@ -37,6 +37,10 @@ library(DescTools)
 library(ggplot2)
 library(dplyr)
 library(moments)
+library(caret)
+#install.packages("vcd")
+library(vcd)
+
 
 #
 # I. Plantea el problema del caso 
@@ -500,27 +504,71 @@ summary(anova)
 
 attach(df)
 
-logistic.1 <- glm(IA ~ numpeho + edadjef + edadjef:sexojef + 
-                    añosedu + añosedu:sexojef, family = binomial)
+#Se usa el modelo de regresion logistica con el metodo de máxima verosimilitud
 
+#Primer modelo incluyendo todas las variables
+logistic.1a <- glm(IA ~ nse5f + numpeho + refin + añosedu + ln_als + ln_alns
+                  + sexojef + area, family = binomial)
+summary(logistic.1a)
+# De acuerdo con los valores p obtenidos, todas las variables
+# presentan significancia o determinan en cierta medida el comportamiento
+# de IA, pero se observa que las que tienen menor significación comparadas
+# con el resto son: area y gasto en alimentos saludables.
+
+#Modelo sin la variable area
+logistic.1 <- glm(IA ~ nse5f + numpeho + refin + añosedu + ln_als + ln_alns
+                  + sexojef , family = binomial)
+
+#Se revisa que las variables tengan significacion
 summary(logistic.1)
+# Se observa que el criterio de Akaike (AIC) para determinar un mejor desempeño 
+# de modelo fue 3 puntos mayor, por lo que, al parecer incluir todas las 
+# variables de la base de datos describe mejor el comportamiento de eliminar
+# las de menor significación
 
-pseudo_r2.1 <- (logistic.1$null.deviance - logistic.1$deviance)/logistic.1$null.deviance
-pseudo_r2.1
 
-install.packages("caret") 
-library(caret)
-df$predicho <- as.numeric(logistic.1$fitted.values>=0.5)
-df$predicho <- factor(df$predicho, labels = levels(df$IA))
-levels(df$predicho)
-caret::confusionMatrix(df$predicho, df$IA, positive = "Presenta IA")
+#Se realiza el test anova para ver la signifcacion de las variables
+anova(logistic.1, test = "Chisq")
 
-# Probablemente los falsos negativos se deben a que eliminiamos cerca del 50% de datos
-# incompletos provenientes de los campos de gasto en alimentos saludables/no saludables
-# que intervienen en alto grado en la explicación del comportamiento de la inseguridad 
-# alimentaria, por lo que sería necesario recabar información acerca de la no
-# disponibilidad de estos datos para hacer el tratamiento adecuado de los datos faltantes
-# y repetir la modelación para conocer si puede haber un mejor modelo que el obtenido
+
+#Comparación de clasificación predicha y observaciones
+
+#Limite 0.5
+#Si la probabilidad de que la variable adquiera el valor 1 
+#"Presenta Inseguridad alimentaria" es superior a 0.5 para la prueba
+#se asigna a este nivel "Presenta Inseguridad Alimentaria"
+df$predicho_5 <- as.numeric(logistic.1$fitted.values>=0.5)
+df$predicho_5 <- factor(df$predicho_5, labels = levels(df$IA))
+
+#Reference (Muestra)
+table(df$IA)
+
+#Matriz de confusión para revisar los resultados predichos del modelos contra las observaciones
+(mc_5 <- caret::confusionMatrix(df$predicho_5, df$IA, positive = "Presenta IA"))
+
+#Grafica de los resultados
+mosaic(mc_5$table, shade = T, colorize = T, main = "Limite 0.5", 
+       gp = gpar(fill = matrix(c("Tan", "orange", "orange", "Tan"), 2, 2)))
+
+
+
+#Limite 0.7 
+#Si la probabilidad de que la variable adquiera el valor 1 
+#"Presenta Inseguridad alimentaria" es superior a 0.7 para la prueba
+#se asigna a este nivel "Presenta Inseguridad Alimentaria"
+df$predicho_7 <- as.numeric(logistic.1$fitted.values>=0.7)
+df$predicho_7 <- factor(df$predicho_7, labels = levels(df$IA))
+#Reference (Muestra)
+table(df$IA)
+#Matriz de confucion para revisar los resultados predichos del modelos contra las observaciones
+(mc_7 <- caret::confusionMatrix(df$predicho_7, df$IA, positive = "Presenta IA"))
+
+#Grafica de los resultados
+mosaic(mc_7$table, shade = T, colorize = T, main = "Limite 0.7", 
+       gp = gpar(fill = matrix(c("Tan", "orange", "orange", "Tan"), 2, 2)))
+
+# Tal vez se logren mejores niveles de precisión al incluir con un mejor
+# tratamiento los datos que fueron eliminiamos por estar incompletos
 
 
 # VI. Escribe tu análisis en un archivo README.MD y tu código en un script de R y 
