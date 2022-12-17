@@ -196,13 +196,13 @@ gastar más en productos no saludables que las personas con mayores niveles soci
 
 En un primer paso para saber si los datos nos proporcionan evidencia estadística para confirmar esta afirmación, se organizó gráficamente el gasto en alimento no saludable agrupado por nivel socioeconómico.
 
-Visualmente se puede notar que los promedios de gasto en alimentos no saludables son diferentes en cada nivel socioeconómico, incluso, se observa que el gasto es mayor a medida que el nivel socioeconómico es más alto.
+Visualmente se puede notar que los promedios de gasto en alimentos no saludables son diferentes en cada nivel socioeconómico, incluso, se observa que el gasto es mayor a medida que el nivel socioeconómico es más alto y que hay una cantidad notable de valores atípicos altos en el nivel socioeconómico bajo.
 
 ![boxplot_hipotesis_ln_alns_nse5f](postwork/img/boxplot_hipotesis_ln_alns_nse5f.png)
 
 Enseguida, mediante un contraste de hipótesis se determina si, de acuerdo con la evidencia estadística, hay alguna diferencia en el gasto promedio en alimentos no saludables entre los niveles socioeconómicos.
 
-Para ello se empleó la prueba ANOVA de un factor para poder concluir si la variable dependiente gasto en alimentos no saludables se ve afectada por el factor nivel socioeconómico, con base en las siguientes hipótesis:
+Para ello se empleó la prueba ANOVA de un factor para poder concluir si la variable gasto en alimentos no saludables se ve afectada por el factor nivel socioeconómico, con base en las siguientes hipótesis:
 
 - Ho: La media del gasto en alimentos no saludables es igual en todos los niveles socioeconómicos.
 - Ha: La media del gasto en alimentos no saludables difiere en al menos uno de los niveles respecto a los demás.
@@ -210,6 +210,7 @@ Para ello se empleó la prueba ANOVA de un factor para poder concluir si la vari
 Resultado de la prueba
 
 El resultado de la prueba ANOVA mostró un valor p cercano a 0, por lo que se rechaza Ho en favor de la hipóties alternativa.
+También el resultado indica una
 
 ![resultado_anova](postwork/img/resultado_anova.png)
 
