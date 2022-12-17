@@ -217,7 +217,36 @@ También el resultado indica una
 Con un nivel de confianza mayor al 99%, existe evidencia estadística para concluir que la media del gasto en alimentos no saludables difiere en al menos uno de los niveles respecto a los demás.
 
 ## Estimación de modelo, para identificar los determinantes de la inseguridad alimentaria
-Regresión logística
+El conocimiento sobre los datos que se ha generado hasta este punto, aunque limitado, permite establecer un punto de partida para estimar un modelo con las variables que determinan a la inseguridad alimentaria (IA): el comportamiento de la variable IA parece no depender principalmente de una sola variable en particular, por ejemplo, del gasto en alimentos no saludables, o del nivel socioeconómico bajo, más bien parece que su comportamiento es mejor descrito por un conjunto de variables.
+
+Con base en esta idea se realizó una primera estimación, con un modelo de regresión logística incluyendo todas las variables disponibles.
+
+![modelo_logistic_1a](postwork/img/modelo_logistic_1a.png)
+
+De acuerdo con los valores p obtenidos con este modelo, todas las variables presentan significación o determinan en cierta medida el comportamiento de IA, pero se observa que las variables area y gasto en alimentos saludables tienen menor significación que el resto. 
+El criterio de Akaike (AIC) sobre el desempeño de un modelo es de 22142.
+
+Con un siguiente modelo, sin usar la variable area se observa que el criterio de Akaike (AIC) para determinar un mejor desempeño 
+de modelo es 3 puntos mayor (22145), por lo que, al parecer incluir en el modelo todas las variables de la base de datos describe mejor el comportamiento de IA.
+
+Ya que un modelo de regresión logística como el que se ha obtenido es útil para clasificar si un hogar presentaría IA o no, se utiliza el predictor del modelo para realizar esta clasificación. Para conseguirlo se establece un umbral de probabilidad a partir de la cual se considera que la variable pertenece a uno de los niveles (presenta IA o no presenta IA). 
+En un primer ensayo se asignó 0.5 como umbral o valor límite. Esto es que, si la probabilidad de que la variable adquiera el valor 1 (presenta IA) es superior a 0.5 para la prueba, se asigna a este nivel "presenta IA".
+En un segundo ensayo se asignó 0.7 como umbral.
+De acuerdo con las matrices de confusión calculadas se obtiene una precisión más alta con umbral .5.
+
+|umbral|precisión|
+| --- | --- |
+| .5  | .733
+| .7  | .6731
+
+Comparando gráficamente las matrices de confusión de ambos umbrales se puede observar la mejor precisión con el umbral .5.
+
+![mosaico_matriz_confusion_5](postwork/img/mosaico_matriz_confusion_5.png)
+
+![mosaico_matriz_confusion_7](postwork/img/mosaico_matriz_confusion_7.png)
+
+Finalmente, cabe mencionar que los niveles de precisión podrían mejorar si incluimos los registros incompletos eliminados del conjunto de datos, dándoles un tratamiento adecuado.
+
 
 ## Conclusión
 
