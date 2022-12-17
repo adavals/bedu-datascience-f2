@@ -216,7 +216,8 @@ También el resultado indica una
 
 Con un nivel de confianza mayor al 99%, existe evidencia estadística para concluir que la media del gasto en alimentos no saludables difiere en al menos uno de los niveles respecto a los demás.
 
-## Estimación de modelo, para identificar los determinantes de la inseguridad alimentaria
+## Estimación de modelo para identificar los determinantes de la inseguridad alimentaria
+
 El conocimiento sobre los datos que se ha generado hasta este punto, aunque limitado, permite establecer un punto de partida para estimar un modelo con las variables que determinan a la inseguridad alimentaria (IA): el comportamiento de la variable IA parece no depender principalmente de una sola variable en particular, por ejemplo, del gasto en alimentos no saludables, o del nivel socioeconómico bajo, más bien parece que su comportamiento es mejor descrito por un conjunto de variables.
 
 Con base en esta idea se realizó una primera estimación, con un modelo de regresión logística incluyendo todas las variables disponibles.
