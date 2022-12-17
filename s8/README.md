@@ -246,7 +246,7 @@ Comparando gráficamente las matrices de confusión de ambos umbrales se puede o
 
 ![mosaico_matriz_confusion_7](postwork/img/mosaico_matriz_confusion_7.png)
 
-Finalmente, cabe mencionar que los niveles de precisión podrían mejorar si incluimos los registros incompletos eliminados del conjunto de datos, dándoles un tratamiento adecuado.
+Finalmente, cabe mencionar que los niveles de precisión podrían mejorar si se incluyen los registros incompletos eliminados del conjunto de datos, dándoles un tratamiento adecuado.
 
 
 ## Conclusión
