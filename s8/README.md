@@ -1,4 +1,4 @@
-bbbb# Análisis estadístico sobre inseguridad alimentaria en México
+# Análisis estadístico sobre inseguridad alimentaria en México
 ## Introducción
 En este trabajo, de acuerdo con el interés de un centro de salud nutricional en México,
 el objetivo es realizar un análisis estadístico sobre los patrones de gasto en el hogar de alimentos saludables y no
@@ -113,6 +113,12 @@ Una vez realizada la limpieza de datos se cuenta con la siguiente información d
 |ln_als|1.099|5.844|6.274|6.192|0.688553|6.633|8.605|izquierda|leptocúrtica
 |ln_alns|0.000|3.401|4.007|4.119|1.041476|4.868|8.298|derecha|platocúrtica
 
+Si aplicamos la función exponencial a los datos de gastos que están expresados como logaritmo natural tenemos que para:
+- Gasto en alimentos saludables la media es 488.8187 y la desviación estándar es 1.990833.
+- Gasto en alimentos no saludables la media es 61.48815 y la desviación estándar es 2.833395
+
+Se observa que el gasto en alimentos no saludables presenta más variabilidad que el gasto en alimentos saludables
+
 
 ### Correlación de variables
 Se obtuvo la siguiente tabla de correlación entre variables cuantitativas:
@@ -160,7 +166,29 @@ Finalmente se obtuvo el mismo tipo de gráfico pero involucrando a la variable r
 
 
 ## Cálculo de probabilidades
-### Algo
+En este apartado se obtuvieron formas gráficas de la densidad de probabilidad para las variables de gasto en alimentos saludables y gasto en alimentos no saludables.
+
+### Densidad de probabilidad para gasto en alimentos saludables
+
+![histograma_gasto_als](postwork/img/histograma_gasto_als.png)
+![funcion_gasto_als](postwork/img/funcion_gasto_als.png)
+
+### Densidad de probabilidad para gasto en alimentos no saludables
+
+![histograma_gasto_alns](postwork/img/histograma_gasto_alns.png)
+![funcion_gasto_alns](postwork/img/funcion_gasto_alns.png)
+
+
+También se calcularon algunas probabilidades que pueden ayudar a comprender lo que ocurre con el gasto en alimentos no saludables.
+
+1. ¿Cuál es la probabilidad de que el gasto en alimento no saludable sea mayor a un 50% del promedio del gasto en alimento saludable?
+83.69%
+
+2. ¿Hasta cuanto gastan en alimento no saludable el 90% de los  hogares?
+233.58
+
+3. ¿Cuál es el rango de gasto en alimento no saludable en el que se encuentra el 80% de los hogares?
+El 80% de los hogares gasta entre 16.18 y 233.58 en alimentos no saludables
 
 ## Planteamiento de hipótesis
 ###  Ho: El gasto en alimentos no saludables en los diferentes niveles socioeconómicos es igual
