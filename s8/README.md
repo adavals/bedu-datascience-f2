@@ -146,7 +146,7 @@ Finalmente se obtuvo el mismo tipo de gráfico pero involucrando a la variable r
 
 
 ### Patrones de gasto en alimentos saludables
-En la primera gráfica se observa que el gasto en alimentos saludales entre los diferentes niveles socioeconómicos es mayor a medida que el nivel socioeconómico es más alto. Adicionalmente se observa una cantidad sobresaliente de valores extremos bajos, es decir, muchos hogares, en todos los niveles socioeconómicos presentan gastos extremadamente bajos en alimentos saludables. También presentan gastos extremos altos pero en menor cantidad que los bajos.
+En la primera gráfica se observa que el gasto en alimentos saludables entre los diferentes niveles socioeconómicos es mayor a medida que el nivel socioeconómico es más alto. Adicionalmente se observa una cantidad sobresaliente de valores extremos bajos, es decir, muchos hogares, en todos los niveles socioeconómicos presentan gastos extremadamente bajos en alimentos saludables. También presentan gastos extremos altos pero en menor cantidad que los bajos.
 
 ![patron_gasto_als_vs_nse](postwork/img/patron_gasto_als_vs_nse.png)
 
