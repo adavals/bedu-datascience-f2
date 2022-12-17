@@ -114,19 +114,44 @@ Una vez realizada la limpieza de datos se cuenta con la siguiente información d
 |ln_alns|0.000|3.401|4.007|4.119|1.041476|4.868|8.298|derecha|platocúrtica
 
 
-### Correlación
+### Correlación de variables
+Se obtuvo la siguiente tabla de correlación entre variables cuantitativas:
+|        |numpeho |edadjef |añosedu  |ln_als |ln_alns
+| --- | --- | --- | --- | --- | ---
+|numpeho | 1.0000 
+|edadjef |-0.1140 | 1.0000 
+|añosedu |-0.0435 |-0.3566  |1.0000  
+|ln_als  | 0.3109 |-0.1127  |0.2421  |1.0000  
+|ln_alns | 0.0809 |-0.0984  |0.2184  |0.3285  |1.0000
 
+En esta tabla se puede observar:
+- Ninguna correlación entre variables se acerca a +-1 o al menos a +- .5, este conjunto de variables no presentan fuerte correlación
+- El gasto en alimento no saludable tiene la más alta correlación con el gasto en alimento saludable.
+- La edad del jefe de familia tiene la más alta correlación negativa con los años de educación del jefe de familia.
 
 ### Patrones de gasto en alimentos no saludables
-boxplot? o alguna
-(Gráfica Boxplot por Nivel Socioeconomico)
-(Gráfica Boxplot por Recursos financieros)
-(Gráfica boxplot por inseguridad alimentaria)
+Se obtuvo información sobre patrones de gasto en alimentos no saludables usando gráficas de caja. 
+
+En la primera gráfica observamos que el gasto en alimentos no saludales entre los diferentes niveles socioeconómicos es mayor a medida que el nivel socioeconómico es más alto.
+![patron_gasto_alns_vs_nse](postwork/img/patron_gasto_alns_vs_nse.png)
+
+Enseguida, involucramos la variable de inseguridad alimentaria y observamos que en el nivel socioeconómico bajo, el grupo que presenta inseguridad alimentaria presenta muchos valores extremos en gasto en alimento no saludable.
+![patron_gasto_alns_vs_nse_ia](postwork/img/patron_gasto_alns_vs_nse_ia.png)
+
+Finalmente se obtuvo el mismo tipo de gráfico pero involucrando a la variable recursos financieros adicionales y también se observan valores extremos altos en gasto en alimento no saludable en el grupo que presenta inseguridad alimentaria.
+![patron_gasto_alns_vs_refin_ia](postwork/img/patron_gasto_alns_vs_refin_ia.png)
+
 
 ### Patrones de gasto en alimentos saludables
-(Gráfica Boxplot por Nivel Socioeconomico)
-(Gráfica Boxplot por Recursos financieros)
-(Gráfica boxplot por inseguridad alimentaria)
+En la primera gráfica observamos que el gasto en alimentos saludales entre los diferentes niveles socioeconómicos es mayor a medida que el nivel socioeconómico es más alto. Adicionalmente se observan muchos valores extremos bajos, es decir, muchos hogares, en todos los niveles socioeconómicos presentan gastos extremadamente bajos. También presentan gastos extremos altos pero en menor cantidad que los bajos.
+![patron_gasto_als_vs_nse](postwork/img/patron_gasto_als_vs_nse.png)
+
+Enseguida, involucramos la variable de inseguridad alimentaria y observamos que el mismo comportamiento de valores extremos se observa muy similiar tanto en los grupos que presentan inseguridad alimentaria como los que no, aunque se observa una ligera cantidad mayor de valores extremos bajos en los grupos que presentan inseguridad alimentaria.
+![patron_gasto_als_vs_nse_ia](postwork/img/patron_gasto_als_vs_nse_ia.png)
+
+Finalmente se obtuvo el mismo tipo de gráfico pero involucrando a la variable recursos financieros adicionales y se observan más valores extremos bajos en gasto en alimento saludable en el grupo que presenta inseguridad alimentaria.
+![patron_gasto_als_vs_refin_ia](postwork/img/patron_gasto_als_vs_refin_ia.png)
+
 
 ## Cálculo de probabilidades
 ### Algo
