@@ -191,11 +191,29 @@ Se calcularon algunas probabilidades que pueden ayudar a comprender lo que ocurr
 El 80% de los hogares gasta entre 16.18 y 233.58 en alimentos no saludables
 
 ## Planteamiento de hipótesis
-###  Ho: El gasto en alimentos no saludables en los diferentes niveles socioeconómicos es igual
-</br>Ha: El gasto en alimentos no saludables en al menos uno de los niveles socieconómicos difiere de algún otro nivel.
+De acuerdo con la información disponible, la mayoría de las personas afirman que los hogares con menor nivel socioeconómico tienden a 
+gastar más en productos no saludables que las personas con mayores niveles socioeconómicos.
 
-Ho: El gasto en alimentos no saludables es igual en los hogares que presentan inseguridad alimentaria que en los que no presentan inseguridad alimentaria
-Ha: El gasto en alimentos no saludables es diferente en los hogares que presentan inseguridad alimentaria que en los que no presentan inseguridad alimentaria
+En un primer paso para saber si los datos nos proporcionan evidencia estadística para confirmar esta afirmación, se organizó gráficamente el gasto en alimento no saludable agrupado por nivel socioeconómico.
+
+Visualmente se puede notar que los promedios de gasto en alimentos no saludables son diferentes en cada nivel socioeconómico, incluso, se observa que el gasto es mayor a medida que el nivel socioeconómico es más alto.
+
+![boxplot_hipotesis_ln_alns_nse5f](postwork/img/boxplot_hipotesis_ln_alns_nse5f.png)
+
+Enseguida, mediante un contraste de hipótesis se determina si, de acuerdo con la evidencia estadística, hay alguna diferencia en el gasto promedio en alimentos no saludables entre los niveles socioeconómicos.
+
+Para ello se empleó la prueba ANOVA de un factor para poder concluir si la variable dependiente gasto en alimentos no saludables se ve afectada por el factor nivel socioeconómico, con base en las siguientes hipótesis:
+
+- Ho: La media del gasto en alimentos no saludables es igual en todos los niveles socioeconómicos.
+- Ha: La media del gasto en alimentos no saludables difiere en al menos uno de los niveles respecto a los demás.
+
+Resultado de la prueba
+
+El resultado de la prueba ANOVA mostró un valor p cercano a 0, por lo que se rechaza Ho en favor de la hipóties alternativa.
+
+![resultado_anova](postwork/img/resultado_anova.png)
+
+Con un nivel de confianza mayor al 99%, existe evidencia estadística para concluir que la media del gasto en alimentos no saludables difiere en al menos uno de los niveles respecto a los demás.
 
 ## Estimación de modelo, para identificar los determinantes de la inseguridad alimentaria
 Regresión logística
