@@ -77,11 +77,14 @@ apply(X = is.na(df.raw), MARGIN = 2, FUN = mean)
 # edadjef   12%
 # sexojef   12%
 
+
 # Examinar la información de Inseguridad alimentaria que no estaría disponible
 df.NA.ln_alns <-df.raw[(is.na(df.raw$ln_alns)),]
 View(df.NA.ln_alns)
 df.NA.ln_alns$IA <- factor(df.NA.ln_alns$IA, labels = c("No presenta IA", "Presenta IA"))
 summary(df.NA.ln_alns$IA)
+round((3938/(3938 + 13566))*100,2)
+round((13566/(3938 + 13566))*100,2)
 
 df.NA.ln_als <-df.raw[(is.na(df.raw$ln_als)),]
 df.NA.ln_als$IA <- factor(df.NA.ln_als$IA, labels = c("No presenta IA", "Presenta IA"))
@@ -97,6 +100,10 @@ df <- df.raw[complete.cases(df.raw),]
 dim(df)   
 # 20280 observaciones completas y 10 variables
 View(df)
+
+# Porcentaje de registros con datos faltantes
+(40809-20280)/40809
+# 50.3%
 
 # 1. Tipos de variables
 # El conjunto de datos contiene 10 variables:
@@ -118,6 +125,10 @@ summary(df)
 # 3. Medidas de dispersión
 sd(df$numpeho); sd(df$edadjef); sd(df$añosedu)
 sd(df$ln_als); sd(df$ln_alns)
+
+# Exponencial en medidas de gastos
+exp(mean(df$ln_als)); exp(mean(df$ln_alns))
+exp(sd(df$ln_als)); exp(sd(df$ln_alns))
 
 # TO DO: Hacer tabla de Interpretaciones
 # Ej. Dado que moda < mediana < media, la distribución está sesgada a la derecha."
@@ -173,6 +184,7 @@ kurtosis(df$ln_alns)
 
 # Nivel socioeconómico
 freq.nse5f <- table(df$nse5f)
+
 transform(freq.nse5f, 
           rel.freq=prop.table(Freq),
           cum.freq=cumsum(prop.table(Freq)))
@@ -226,6 +238,7 @@ ggplot(df, aes(x = IA)) +
   ylab("Cantidad de hogares") + 
   ggtitle("Distribución de frecuencias")
 
+
 # Número de personas en el hogar
 
 k = ceiling(1 + 3.3*log10(length(df$numpeho)))
@@ -241,11 +254,10 @@ transform(dist.freq,
           cum.freq=cumsum(prop.table(Freq)))
 
 ggplot(df) + 
-  geom_histogram(binwidth = .5, bins = k, aes(x = numpeho), fill = 'steelblue') + 
+  geom_histogram(bins = k, binwidth = .5,  aes(x = numpeho), fill = 'steelblue') + 
   xlab("Número de personas en el hogar") + 
   ylab("Cantidad de hogares") + 
   ggtitle("Distribución de frecuencias")
-
 
 # Edad del jefe/a de familia
 
@@ -262,11 +274,10 @@ transform(dist.freq,
           cum.freq=cumsum(prop.table(Freq)))
 
 ggplot(df) + 
-  geom_histogram(bins = k, aes(x = edadjef), fill = 'steelblue') + 
+    geom_histogram(bins = k, binwidth = 1, aes(x = edadjef), fill = 'steelblue') + 
   xlab("Edad del jefe/a de familia") + 
   ylab("Cantidad de hogares") + 
   ggtitle("Distribución de frecuencias")
-# binwidth = .5, 
 
 sd(df$añosedu)
 
@@ -285,14 +296,15 @@ transform(dist.freq,
           cum.freq=cumsum(prop.table(Freq)))
 
 ggplot(df) + 
-  geom_histogram( aes(x = añosedu ), fill = 'steelblue') + 
+  geom_histogram(binwidth = 1, aes(x = añosedu ), fill = 'steelblue') + 
   xlab("Años de educación del jefe/a de familia") + 
   ylab("Cantidad de hogares") + 
   ggtitle("Distribución de frecuencias")
 
 
 # Logaritmo natural del gasto en alimentos saludables
-k = ceiling(1 + 3.3*log10(length(exp(df$ln_als))))
+k = ceiling(1 + 3.3*log10(length(df$ln_als)))
+
 ac = (max(df$ln_als)-min(df$ln_als))/k
 
 bins <- seq(min(df$ln_als), max(df$ln_als), by = ac)
@@ -332,38 +344,31 @@ ggplot(df) +
   ggtitle("Distribución de frecuencias")
 
 
-# 5. Asociacion con la variable dependiente
-
-
-
 # 5.1 Correlacion entre variables cuantitativas
 
 dfcorr.select <- select(df, numpeho, edadjef, añosedu, ln_als, ln_alns)
 corr_matrix <- round(cor(dfcorr.select),4)
 corr_matrix
 
-# TO DO: Interpretación de la matriz
+# Interpretación de la matriz en el reporte
 
 
-# III. Calcula probabilidades que nos permitan entender el problema en México 
-# De acuerdo con la muestra de un total de 20280 hogares, 14427 hogares presentan
-# inseguridad alimentaria: 71.13%
+# Exploración gráfica para encontrar patrones en gastos
 
-14427/20280  
-# [1] 0.7113905
-
-
-# 1. ¿Cuáles son los patrones de gasto en alimentos saludables y no saludables en 
+# ¿Cuáles son los patrones de gasto en alimentos saludables y no saludables en 
 # los hogares mexicanos considerando su nivel socioeconómico, si cuenta con recursos
 # financieros extra y si presenta inseguridad alimentaria?
+# 
+# - ¿Los hogares con menor nivel socioeconómico tienden a gastar más en productos 
+#  no saludables que los hogares con mayores niveles socioeconómicos?  
+# De acuerdo con las gráficas de caja, los niveles socioeconómicos más altos
+# presentan un patrón de gastar más en alimentos no saludables.
 
-
-# a) comparar gasto en alimento saludable, con nse, rfin e IA, si las medidas de tendencia
-#    central son iguales entre los grupos de nse, por ejemplo, el gasto en alimento
-#    saludable no depende del nivel socioeconómico, y así para las otras dos variables y
-#    sus grupos
-
-# b) comparar gasto en alimento no saludable
+# - ¿El que los hogares con menor nivel socioeconómico gasten más en productos
+#  no saludables los lleva a que presente inseguridad alimentaria?
+# En las graficas de caja se observa que, en todos los niveles socioeconómicos,
+# los hogares con inseguridad alimentaria presentan un gasto mayor
+# en alimentos no saludables, no sólo los niveles socioeconómicos bajos.
 
 
 ggplot(df, aes(x=ln_alns, y=nse5f)) +
@@ -372,7 +377,6 @@ ggplot(df, aes(x=ln_alns, y=nse5f)) +
   ylab("Nivel socioeconómico") + 
   ggtitle("Gasto en alimentos no saludables y nivel Socioeconomico")+
   theme_classic()
-
 
 ggplot(df, aes(x=ln_alns, y=nse5f, color=IA)) +
   geom_boxplot() +
@@ -411,22 +415,71 @@ ggplot(df, aes(x=ln_als, y=refin, color=IA)) +
   ggtitle("Gasto en alimentos saludables y recursos adicionales")+
   theme_classic()
 
-# 
-# 2. ¿Los hogares con menor nivel socioeconómico tienden a gastar más en productos 
-#  no saludables que los hogares con mayores niveles socioeconómicos?  
-# De acuerdo con las gráficas el nivel socioeconómico medio es en el
-# que hay una mayor cantidad de gastos en alimentos no saludables
 
-# 3. ¿El que los hogares con menor nivel socioeconómico gasten más en productos
-#  no saludables los lleva a que presente inseguridad alimentaria?
-# En las graficas se observa que, en todos los niveles socioeconómicos,
-# los hogares con inseguridad alimentaria presentan un gasto mayor
-# en alimentos no saludables
-#
+# III. Calcula probabilidades que nos permitan entender el problema en México 
+
+# Para el gasto en alimentos saludables
+x.als <- df$ln_als
+mean.als <- mean(df$ln_als)
+sd.als <- sd(df$ln_als)
+
+hist(x.als, main = "Histograma Gasto en Alimentos Saludables",
+     xlab = "", ylab = "Densidad", prob = TRUE)
+
+y.als <- dnorm(x.als, mean = mean.als, sd = sd.als)*sd.als+mean.als 
+
+plot(x.als, y.als, type = "p", xlab = "X", ylab = "f(x)",
+     main = "Densidad de Probabilidad Alimentos Saludables", 
+     sub = expression(paste(mu == 6.192, " y ", sigma == 0.688)))
+abline(v = mean.als, lwd = 2, lty = 2)
+
+# Para el gasto en alimentos no saludables
+x.alns <- df$ln_alns
+mean.alns <- mean(df$ln_alns)
+sd.alns <- sd(df$ln_alns)
+
+hist(x.alns, main = "Histograma Gasto en Alimentos No Saludables",
+     xlab = "", ylab="Densidad", prob = TRUE)
+
+x.alns <- df$ln_alns
+y.alns <- dnorm(x.alns, mean = mean.alns, sd = sd.alns) 
+
+plot(x.alns, y.alns, type = "p", xlab = "X", ylab = "f(x)",
+     main = "Densidad de Probabilidad Alimentos No Saludables", 
+     sub = expression(paste(mu == 4.118, " y ", sigma == 1.041)))
+abline(v = mean.alns, lwd = 2, lty = 2) 
+
+# ¿Cuál es la probabilidad de que el gasto en alimento no saludable sea
+# mayor a un 50% del promedio del gasto en alimento saludable?
+prob1 <- pnorm(q = 0.5*mean.als, mean = mean.alns, sd = sd.alns, lower.tail = FALSE)
+prob1
+# 0.8369784
+
+# ¿Hasta cuanto gastan en alimento no saludable el 90% de los  hogares?
+quant <- qnorm(p = 0.9, mean = mean.alns, sd = sd.alns)
+exp(quant)
+#233.5857
+
+# ¿Cuál es el rango de gasto en alimento no saludable en el que
+# se encuentra el 80% de los hogares?
+rango1 <- qnorm(p = 0.2/2, mean = mean.alns, sd = sd.alns)
+rango2 <- qnorm(p = 0.2/2, mean = mean.alns, sd = sd.alns, lower.tail = FALSE)
+exp(rango1)
+exp(rango2)
+# El 80% de los hogares gasta entre 16.18 y 233.58 en alimentos no saludables
 
 
 # IV. Plantea hipótesis estadísticas y concluye sobre ellas para entender el 
 # problema en México 
+
+# a) comparar gasto en alimento no saludable, con nse, rfin e IA, si las medidas de tendencia
+#    central son iguales entre los grupos de nse, por ejemplo, el gasto en alimento
+#    saludable no depende del nivel socioeconómico, y así para las otras dos variables y
+#    sus grupos
+
+
+# b) comparar gasto en alimento saludable
+
 
 # V. Estima un modelo de regresión, lineal o logístico, para identificar los
 # determinantes de la inseguridad alimentaria en México 
