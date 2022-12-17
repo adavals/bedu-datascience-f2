@@ -130,13 +130,7 @@ sd(df$ln_als); sd(df$ln_alns)
 exp(mean(df$ln_als)); exp(mean(df$ln_alns))
 exp(sd(df$ln_als)); exp(sd(df$ln_alns))
 
-# TO DO: Hacer tabla de Interpretaciones
-# Ej. Dado que moda < mediana < media, la distribución está sesgada a la derecha."
-# sd() # El precio tiene una dispersión promedio, respecto a la media, de 3989.44
-# quantile(diamonds$price, probs = c(0.25, 0.50, 0.75))
-# 25% de los diamantes tienen un precio de 950 o menos
-# 50% de los diamantes tienen un precio de 2401 o menos
-# 75% de los diamantes tienen un precio de 5324.25 o menos
+# Tabla de resumen en reporte
 
 # 4. Formas de distribución
 # Sesgo
@@ -180,7 +174,7 @@ kurtosis(df$ln_alns)
 # 2.5798 - platocúrtica
 
 
-# 5. Tablas de distribución de frecuencias
+# Distribución de frecuencias
 
 # Nivel socioeconómico
 freq.nse5f <- table(df$nse5f)
@@ -238,9 +232,7 @@ ggplot(df, aes(x = IA)) +
   ylab("Cantidad de hogares") + 
   ggtitle("Distribución de frecuencias")
 
-
 # Número de personas en el hogar
-
 k = ceiling(1 + 3.3*log10(length(df$numpeho)))
 ac = (max(df$numpeho)-min(df$numpeho))/k
 
@@ -260,7 +252,6 @@ ggplot(df) +
   ggtitle("Distribución de frecuencias")
 
 # Edad del jefe/a de familia
-
 k = ceiling(1 + 3.3*log10(length(df$edadjef)))
 ac = (max(df$edadjef)-min(df$edadjef))/k
 
@@ -282,7 +273,6 @@ ggplot(df) +
 sd(df$añosedu)
 
 # Años de educación del jefe/a de familia
-
 k = ceiling(1 + 3.3*log10(length(df$añosedu)))
 ac = (max(df$añosedu)-min(df$añosedu))/k
 
@@ -322,8 +312,6 @@ ggplot(df) +
   ylab("Cantidad de hogares") + 
   ggtitle("Distribución de frecuencias")
 
-# binwidth = .1,
-
 # Logaritmo natural del gasto en alimentos no saludables
 k = ceiling(1 + 3.3*log10(length(exp(df$ln_alns))))
 ac = (max(df$ln_alns)-min(df$ln_alns))/k
@@ -344,7 +332,7 @@ ggplot(df) +
   ggtitle("Distribución de frecuencias")
 
 
-# 5.1 Correlacion entre variables cuantitativas
+# Correlacion entre variables cuantitativas
 
 dfcorr.select <- select(df, numpeho, edadjef, añosedu, ln_als, ln_alns)
 corr_matrix <- round(cor(dfcorr.select),4)
@@ -370,7 +358,7 @@ corr_matrix
 # los hogares con inseguridad alimentaria presentan un gasto mayor
 # en alimentos no saludables, no sólo los niveles socioeconómicos bajos.
 
-
+# Gasto en alimentos no saludables
 ggplot(df, aes(x=ln_alns, y=nse5f)) +
   geom_boxplot() +
   xlab("Gasto en alimentos no saludables") + 
@@ -392,7 +380,7 @@ ggplot(df, aes(x=ln_alns, y=refin, color=IA)) +
   ggtitle("Gasto en alimentos no saludables y recursos adicionales")+
   theme_classic()
 
-
+# Gasto en alimentos saludables
 ggplot(df, aes(x=ln_als, y=nse5f)) +
   geom_boxplot() +
   xlab("Gasto en alimentos saludables") + 
@@ -472,13 +460,39 @@ exp(rango2)
 # IV. Plantea hipótesis estadísticas y concluye sobre ellas para entender el 
 # problema en México 
 
-# a) comparar gasto en alimento no saludable, con nse, rfin e IA, si las medidas de tendencia
-#    central son iguales entre los grupos de nse, por ejemplo, el gasto en alimento
-#    saludable no depende del nivel socioeconómico, y así para las otras dos variables y
-#    sus grupos
+# Se grafican Los niveles socioeconpomicos con relación al Gasto de alimentos no saludables.
+boxplot(df$ln_alns ~ df$nse5f, 
+        data = df,
+        xlab = "Niveles Socioeconómicos", 
+        ylab = "Gasto en alimentos no saludables", 
+        main = "Gráfica de la Hipótesis", 
+        col = rgb(0, 1, 1, alpha = 0.4))
 
+# Se aplica el análisis de varianza (de un factor) el cual nos permite comparar la media de una variable 
+# considerando dos o más niveles/grupos de factor. En este caso la media del gasto de alimentos no saludables considerando
+# Los 5 niveles socioeconómicos.
+anova <- aov(df$ln_alns ~ df$nse5f,
+             data = df)
 
-# b) comparar gasto en alimento saludable
+# Se muestra el resultado del análisis.
+summary(anova)
+
+# Resultado:
+# A nivel de mayor al 99%, Existe evidencia estadística para rechazar la Ho referente a que hogares con menor nivel socioeconómico tienden a 
+# gastar más en productos no saludables que las personas con mayores niveles socioeconómicos. 
+
+# Ideas:
+# Comparar gasto en alimento no saludable, con nse, rfin e IA, si las medidas de tendencia
+# central son iguales entre los grupos de nse, por ejemplo, el gasto en alimento
+# saludable no depende del nivel socioeconómico, y así para las otras dos variables y
+# sus grupos
+
+# Ho: El gasto en alimentos no saludables es igual en los hogares que presentan
+# inseguridad alimentaria que en los que no presentan inseguridad alimentaria
+# Ha: El gasto en alimentos no saludables es diferente en los hogares que
+# presentan inseguridad alimentaria que en los que no presentan inseguridad
+# alimentaria
+# - contrastar gasto en alimento saludable
 
 
 # V. Estima un modelo de regresión, lineal o logístico, para identificar los
@@ -509,6 +523,7 @@ caret::confusionMatrix(df$predicho, df$IA, positive = "Presenta IA")
 # y repetir la modelación para conocer si puede haber un mejor modelo que el obtenido
 
 
-
 # VI. Escribe tu análisis en un archivo README.MD y tu código en un script de R y 
 # publica ambos en un repositorio de Github.
+
+
