@@ -248,13 +248,13 @@ Comparando gráficamente las matrices de confusión de ambos umbrales se puede o
 Finalmente, cabe mencionar que los niveles de precisión podrían mejorar si se incluyen los registros incompletos eliminados del conjunto de datos, dándoles un tratamiento adecuado.
 
 ## Conclusiones
-Con base en los análisis aplicados a los datos se logró un mayor conocimiento sobre el comportamiento de la IA en México.
+Con base en los análisis aplicados a los datos se logró un mayor conocimiento sobre el comportamiento de la inseguridad alimentaria en México.
 
-De acuerdo con los procedimientos aplicados se concluye que el comportamiento de la IA es mejor descrito a través de un conjunto de variables y no sólo de una o dos en particular.
+De acuerdo con los procedimientos aplicados se concluye que el comportamiento de la inseguridad alimentaria se puede describir mejor a través de un conjunto de variables y no sólo de una o dos en particular.
 
 La confiabilidad de los hallazgos y procedimientos empleados en este trabajo está condicionada por varios factores:
 - la eliminación de los datos incompletos de la base de datos;
-- falta de análisis individuales de variables adicionales al nivel socioeconómico y el gasto en alimento no saludable;
+- falta de análisis individuales y más extensos de variables adicionales al nivel socioeconómico y el gasto en alimento no saludable;
 - el tiempo limitado para realizarlo;
 - y la experiencia y comprensión a nivel inicial en la aplicación de conceptos y uso de herramientas estadísticas.
 
