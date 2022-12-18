@@ -1,4 +1,12 @@
 # Análisis estadístico sobre inseguridad alimentaria en México
+### EQUIPO 17:
+- Alan Canales
+- Bernardo Arroyo
+- Guadalupe Valenzuela Soto
+- Hazael Cuahutli Román López
+- José Antonio Jiménez Loya
+- Martha Isabel Soriano Ruiz
+---
 ## Introducción
 De acuerdo con el interés de un centro de salud nutricional en México, en este trabajo se realiza un análisis estadístico sobre los patrones de gasto en el hogar de alimentos saludables y no saludables, determinar si los hogares con menor nivel socioeconomico tienden a gastar más 
 en productos no saludables que los hogares con mayores niveles socioeconómicos y que esto,
@@ -130,8 +138,8 @@ Se obtuvo la siguiente tabla de correlación entre variables cuantitativas:
 |ln_alns | 0.0809 |-0.0984  |0.2184  |0.3285  |1.0000
 
 En esta tabla se puede observar:
-- Ninguna correlación entre variables se acerca a +-1 o al menos a +- .5, este conjunto de variables no presentan fuerte correlación
-- El gasto en alimento no saludable tiene la más alta correlación con el gasto en alimento saludable.
+- Ninguna correlación entre variables se acerca a +-1 o al menos a +- .5, este conjunto de variables no presenta fuerte correlación
+- El gasto en alimentos no saludables tiene la más alta correlación con el gasto en alimentos saludables.
 - La edad del jefe de familia tiene la más alta correlación negativa con los años de educación del jefe de familia.
 
 ### Patrones de gasto en alimentos no saludables

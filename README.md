@@ -1,8 +1,17 @@
 # bedu-datascience-f2
-## Repositorio de prácticas Postwork: EQUIPO 17
+## Repositorio de prácticas Postwork
 ### Curso Ciencia de Datos Bedu-Santander 
 ### Fase 2 - Módulo 1: Estadística con R 
 ---
+### EQUIPO 17:
+- Alan Canales
+- Bernardo Arroyo
+- Guadalupe Valenzuela Soto
+- Hazael Cuahutli Román López
+- José Antonio Jiménez Loya
+- Martha Isabel Soriano Ruiz
+---
+
 ### [1. Introducción a R](https://github.com/adavals/bedu-datascience-f2/tree/main/s1/postwork)
 
 ### [2. Manipulación y visualización de datos en R](https://github.com/adavals/bedu-datascience-f2/tree/main/s2/postwork)
