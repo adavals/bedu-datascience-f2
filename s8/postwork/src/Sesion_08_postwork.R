@@ -515,6 +515,16 @@ summary(logistic.1a)
 # de IA, pero se observa que las que tienen menor significación comparadas
 # con el resto son: area y gasto en alimentos saludables.
 
+# bondad del modelo con base en el estadístico de verosimilitud, bajos
+# valores indican baja variabilidad e indican un buen modelo
+pseudo_r2.1a <- (logistic.1a$null.deviance - logistic.1a$deviance)/logistic.1a$null.deviance
+pseudo_r2.1a
+
+# 0.09249577
+# Este bajo valor indica baja variabilidad por lo que se puede
+# considerar un buen modelo
+
+
 #Modelo sin la variable area
 logistic.1 <- glm(IA ~ nse5f + numpeho + refin + añosedu + ln_als + ln_alns
                   + sexojef , family = binomial)
@@ -526,6 +536,14 @@ summary(logistic.1)
 # variables de la base de datos describe mejor el comportamiento de eliminar
 # las de menor significación
 
+# bondad del modelo con base en el estadístico de verosimilitud, bajos
+# valores indican baja variabilidad e indican un buen modelo
+pseudo_r2.1 <- (logistic.1$null.deviance - logistic.1$deviance)/logistic.1$null.deviance
+pseudo_r2.1
+
+# 0.05202572
+# Este valor más bajo que el anterior indica que en cuanto a variabilidad es
+# mejor modelo
 
 #Se realiza el test anova para ver la signifcacion de las variables
 anova(logistic.1, test = "Chisq")

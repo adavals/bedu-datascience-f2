@@ -224,10 +224,10 @@ Con base en esta idea se realizó una primera estimación, con un modelo de regr
 ![modelo_logistic_1a](postwork/img/modelo_logistic_1a.png)
 
 De acuerdo con los valores p obtenidos con este modelo, todas las variables presentan significación o determinan en cierta medida el comportamiento de IA, pero se observa que las variables area y gasto en alimentos saludables tienen menor significación que el resto. 
-El criterio de Akaike (AIC) sobre el desempeño de un modelo es de 22142.
+El criterio de Akaike (AIC) sobre el desempeño de un modelo es de 22142. La bondad de ajuste del modelo arroja un valor de 0.0924, que indica baja variabilidad, por lo que se puede considerar un buen modelo.
 
 Con un siguiente modelo, sin usar la variable area se observa que el criterio de Akaike (AIC) para determinar un mejor desempeño 
-de modelo es 3 puntos mayor (22145), por lo que, al parecer incluir en el modelo todas las variables de la base de datos describe mejor el comportamiento de IA.
+de modelo es 3 puntos mayor (22145), por lo que, al parecer incluir en el modelo todas las variables de la base de datos describe mejor el comportamiento de IA. Sin embargo, la bondad de ajuste del modelo arroja un valor de 0.0520, una variabilidad menor que en el modelo anterior, su bondad de ajuste es mejor que el anterior.
 
 Ya que un modelo de regresión logística como el que se ha obtenido es útil para clasificar si un hogar presentaría IA o no, se utiliza el predictor del modelo para realizar esta clasificación. Para conseguirlo se establece un umbral de probabilidad a partir de la cual se considera que la variable pertenece a uno de los niveles (presenta IA o no presenta IA). 
 En un primer ensayo se asignó 0.5 como umbral o valor límite. Esto es que, si la probabilidad de que la variable adquiera el valor 1 (presenta IA) es superior a 0.5 para la prueba, se asigna a este nivel "presenta IA".
