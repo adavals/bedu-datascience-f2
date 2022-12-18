@@ -1,9 +1,9 @@
 # Análisis estadístico sobre inseguridad alimentaria en México
 ### EQUIPO 17:
 - Alan Canales
-- Bernardo Arroyo
 - Guadalupe Valenzuela Soto
 - Hazael Cuahutli Román López
+- Héctor Bernardo Arroyo Hernández
 - José Antonio Jiménez Loya
 - Martha Isabel Soriano Ruiz
 ---
@@ -138,7 +138,7 @@ Se obtuvo la siguiente tabla de correlación entre variables cuantitativas:
 |ln_alns | 0.0809 |-0.0984  |0.2184  |0.3285  |1.0000
 
 En esta tabla se puede observar:
-- Ninguna correlación entre variables se acerca a +-1 o al menos a +- .5, este conjunto de variables no presenta fuerte correlación
+- Ninguna correlación entre variables se acerca a +-1 o al menos a +- .5, este conjunto de variables no presenta fuerte correlación.
 - El gasto en alimentos no saludables tiene la más alta correlación con el gasto en alimentos saludables.
 - La edad del jefe de familia tiene la más alta correlación negativa con los años de educación del jefe de familia.
 

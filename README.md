@@ -5,9 +5,9 @@
 ---
 ### EQUIPO 17:
 - Alan Canales
-- Bernardo Arroyo
 - Guadalupe Valenzuela Soto
 - Hazael Cuahutli Román López
+- Héctor Bernardo Arroyo Hernández
 - José Antonio Jiménez Loya
 - Martha Isabel Soriano Ruiz
 ---
