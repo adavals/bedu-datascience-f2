@@ -1,14 +1,13 @@
 # Análisis estadístico sobre inseguridad alimentaria en México
 ## Introducción
-En este trabajo, de acuerdo con el interés de un centro de salud nutricional en México,
-el objetivo es realizar un análisis estadístico sobre los patrones de gasto en el hogar de alimentos saludables y no
-saludables, determinar si los hogares con menor nivel socioeconomico tienden a gastar más 
+De acuerdo con el interés de un centro de salud nutricional en México, en este trabajo se realiza un análisis estadístico sobre los patrones de gasto en el hogar de alimentos saludables y no saludables, determinar si los hogares con menor nivel socioeconomico tienden a gastar más 
 en productos no saludables que los hogares con mayores niveles socioeconómicos y que esto,
 podría llevarlos a presentar cierta inseguridad alimentaria y tratar de modelar 
 los determinantes socioeconómicos de la inseguridad alimentaria, todo esto, usando un extracto de 
 los datos de la Encuesta Nacional de Salud y Nutrición (2012) 
 
 ## Planteamiento del problema
+
 Primeramente, se requiere un análisis estadístico para conocer sobre los 
 patrones de gasto en alimentos saludables y no saludables en los hogares mexicanos, en base a:
 - nivel socioeconómico, 
@@ -248,7 +247,19 @@ Comparando gráficamente las matrices de confusión de ambos umbrales se puede o
 
 Finalmente, cabe mencionar que los niveles de precisión podrían mejorar si se incluyen los registros incompletos eliminados del conjunto de datos, dándoles un tratamiento adecuado.
 
+## Conclusiones
+Con base en los análisis aplicados a los datos se logró un mayor conocimiento sobre el comportamiento de la IA en México.
 
-## Conclusión
+De acuerdo con los procedimientos aplicados se concluye que el comportamiento de la IA es mejor descrito a través de un conjunto de variables y no sólo de una o dos en particular.
+
+La confiabilidad de los hallazgos y procedimientos empleados en este trabajo está condicionada por varios factores:
+- la eliminación de los datos incompletos de la base de datos;
+- falta de análisis individuales de variables adicionales al nivel socioeconómico y el gasto en alimento no saludable;
+- el tiempo limitado para realizarlo;
+- y la experiencia y comprensión a nivel inicial en la aplicación de conceptos y uso de herramientas estadísticas.
+
+Favorablemente para todos los miembros del equipo se logró una mayor comprensión y experiencia en la aplicación de conceptos y herramientas estadísticas, así como el uso y ventajas del lenguaje R en el desarrollo de trabajos de análisis estadístico.
+
+
 
 
