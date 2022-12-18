@@ -258,7 +258,7 @@ La confiabilidad de los hallazgos y procedimientos empleados en este trabajo est
 - el tiempo limitado para realizarlo;
 - y la experiencia y comprensión a nivel inicial en la aplicación de conceptos y uso de herramientas estadísticas.
 
-Favorablemente para todos los miembros del equipo se logró una mayor comprensión y experiencia en la aplicación de conceptos y herramientas estadísticas, así como el uso y ventajas del lenguaje R en el desarrollo de trabajos de análisis estadístico.
+Favorablemente, para todos los miembros del equipo se logró una mayor comprensión y experiencia en la aplicación de conceptos y herramientas estadísticas, así como el uso y ventajas del lenguaje R en el desarrollo de trabajos de análisis estadístico.
 
 
 
