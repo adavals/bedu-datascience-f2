@@ -260,6 +260,9 @@ La confiabilidad de los hallazgos y procedimientos empleados en este trabajo est
 
 Favorablemente, para todos los miembros del equipo se logró una mayor comprensión y experiencia en la aplicación de conceptos y herramientas estadísticas, así como el uso y ventajas del lenguaje R en el desarrollo de trabajos de análisis estadístico.
 
+---
+[-> Ver Código R](https://github.com/adavals/bedu-datascience-f2/tree/main/s8/postwork/src)
+
 
 
 
